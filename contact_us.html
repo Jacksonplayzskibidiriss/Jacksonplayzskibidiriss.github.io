@@ -7,17 +7,24 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
-  html,body {
-  background: url('https://gcdnb.pbrd.co/images/ZkCX8Y8SExuR.jpg?o=1') no-repeat center center fixed;
-  background-size: cover;
-}
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('https://gcdnb.pbrd.co/images/ZkCX8Y8SExuR.jpg?o=1') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+  }
 
   h1 {
     font-size: 3em;
+    margin-top: 50px;
     margin-bottom: 20px;
     color: #00bcd4;
     text-shadow: 0 0 15px #00bcd4;
     z-index: 2;
+    position: relative;
   }
 
   textarea {
@@ -25,7 +32,7 @@
     max-width: 500px;
     height: 150px;
     margin-bottom: 20px;
-    background: rgba(0, 0, 0, 0.6); /* semi-transparent */
+    background: rgba(0, 0, 0, 0.6);
     color: #00bcd4;
     border: 3px solid #00bcd4;
     border-radius: 10px;
@@ -33,6 +40,7 @@
     font-size: 1em;
     resize: none;
     z-index: 2;
+    position: relative;
     box-shadow: 0 0 15px #00bcd4;
   }
 
@@ -47,6 +55,7 @@
     box-shadow: 0 0 10px #00bcd4;
     transition: background 0.5s;
     z-index: 2;
+    position: relative;
   }
 
   button:hover {
@@ -59,10 +68,11 @@
     color: #00e5ff;
     display: none;
     z-index: 2;
+    position: relative;
   }
 
   #particles {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -155,7 +165,7 @@
 
   function animateParticles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "rgba(0, 188, 212, 0.6)"; // darker blue particles
+    ctx.fillStyle = "rgba(0, 188, 212, 0.6)";
 
     for (let p of particles) {
       ctx.beginPath();

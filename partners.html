@@ -28,25 +28,25 @@
       animation: neonGlowBlue 2s ease-in-out infinite alternate;
       color: #00f;
       margin-bottom: 40px;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     }
 
+    /* Side-by-side images */
     .partner-images {
       display: flex;
-      flex-direction: column;
-      gap: 30px;
+      flex-direction: row;
+      gap: 40px;
       align-items: center;
+      justify-content: center;
+      flex-wrap: wrap; /* lets them move under each other on small screens */
       margin-top: 20px;
     }
 
     .partner-images img {
       width: 380px;
-      max-width: 80vw;
+      max-width: 40vw;
       border-radius: 12px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 10px;
     }
 
     .partner-images img:hover {
