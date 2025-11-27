@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Partners</title>
+  <style>
+    body {
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial Black', sans-serif;
+      overflow-x: hidden;
+      text-align: center;
+      color: white;
+      padding-top: 80px;
+    }
+
+    .neon-text {
+      font-size: 64px;
+      font-weight: bold;
+      text-transform: uppercase;
+      animation: neonGlowBlue 2s ease-in-out infinite alternate;
+      color: #00f;
+      margin-bottom: 40px;
+    }
+
+    .partner-images {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .partner-images img {
+      width: 380px;
+      max-width: 80vw;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .partner-images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00f, 0 0 40px #00f;
+    }
+
+    #starfield {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    @keyframes neonGlowBlue {
+      from {
+        text-shadow:
+          0 0 5px #fff,
+          0 0 15px #00f,
+          0 0 30px #00f,
+          0 0 60px #00f;
+      }
+      to {
+        text-shadow:
+          0 0 10px #fff,
+          0 0 20px #00f,
+          0 0 40px #00f,
+          0 0 80px #00f;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<div class="neon-text">Partners</div>
+
+<div class="partner-images">
+  <a href="https://testjkerfjr.global.ssl.fastly.net/" target="_blank">
+    <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkeCUeczj-CHkEG1ADigkvE_lThwCpE21TV0quqEOsAxA545XEfveHHyhFM-AEmSMfyqc0Ak6xND767G_7uuKUBMMRq8oQyMlg9_Dx0d8dmVfH-HQCkADJ2aVc2bpbcDn7a3ZasaldvvPdevbIKJmy4pCfxJcVWj8uQ_RpXLDQk342ewvf_XqIwtOWwgMt2zy6WwVW8u6Rp-aVspPnGT3ux1xOMVSsraKA=w1280">
+  </a>
+
+  <a href="https://sites.google.com/view/hawkingschools/neonix-web-project%EA%9C%B1?authuser=0" target="_blank">
+    <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcLiLOy3cTxj64pCBxGgKi7cK_Bte9AgUu6Vbc4qAtXLuMrouPfZqUcRWp39kLwnX34Le1OL2QhHdF2q_jiLkIdtafv8l7WMiR1dLiXpCAZ3bxwGZbWwUWItx3f7bmkLRUPZmfchCRFo85gfcc6BpqD7OHWY3JARM1KMoOqhSF6ca-6E2lfLe7ZaIc=w1280">
+  </a>
+</div>
+
+<script>
+  // Starfield animation
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const stars = [];
+  const starCount = 100;
+
+  for (let i = 0; i < starCount; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 2 + 1,
+      speed: Math.random() * 0.5 + 0.1
+    });
+  }
+
+  function animateStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    for (let star of stars) {
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+      ctx.fill();
+      star.y += star.speed;
+      if (star.y > canvas.height) {
+        star.y = 0;
+        star.x = Math.random() * canvas.width;
+      }
+    }
+    requestAnimationFrame(animateStars);
+  }
+
+  animateStars();
+
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+
+</body>
+</html>
