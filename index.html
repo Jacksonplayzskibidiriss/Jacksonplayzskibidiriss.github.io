@@ -12,22 +12,23 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
       font-family: 'Arial Black', sans-serif;
-      overflow: hidden;
+      overflow-x: hidden;
       text-align: center;
       color: white;
+      padding: 20px;
+      box-sizing: border-box;
     }
-
     .neon-text {
       font-size: 64px;
       font-weight: bold;
       text-transform: uppercase;
       animation: neonGlowBlue 2s ease-in-out infinite alternate;
       color: #00f;
+      margin-bottom: 20px;
     }
-
     .search-container {
       display: flex;
       align-items: center;
@@ -36,8 +37,8 @@
       padding: 10px 20px;
       border-radius: 50px;
       animation: neonGlowBlueInput 2s ease-in-out infinite alternate;
+      margin-bottom: 20px;
     }
-
     .search-container input {
       background: transparent;
       border: none;
@@ -48,11 +49,9 @@
       font-family: 'Arial Black', sans-serif;
       caret-color: white;
     }
-
     .search-container input::placeholder {
       color: #ccccff;
     }
-
     .mindfind {
       background: none;
       border: none;
@@ -61,7 +60,6 @@
       align-items: center;
       justify-content: center;
     }
-
     .mindfind svg {
       width: 32px;
       height: 32px;
@@ -69,7 +67,6 @@
       stroke-width: 2;
       fill: none;
     }
-
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
@@ -78,24 +75,14 @@
       -webkit-text-fill-color: white !important;
       box-shadow: 0 0 0px 1000px transparent inset !important;
     }
-
     @keyframes neonGlowBlue {
       from {
-        text-shadow:
-          0 0 5px #fff,
-          0 0 15px #00f,
-          0 0 30px #00f,
-          0 0 60px #00f;
+        text-shadow: 0 0 5px #fff, 0 0 15px #00f, 0 0 30px #00f, 0 0 60px #00f;
       }
       to {
-        text-shadow:
-          0 0 10px #fff,
-          0 0 20px #00f,
-          0 0 40px #00f,
-          0 0 80px #00f;
+        text-shadow: 0 0 10px #fff, 0 0 20px #00f, 0 0 40px #00f, 0 0 80px #00f;
       }
     }
-
     @keyframes neonGlowBlueInput {
       from {
         box-shadow: 0 0 5px #fff, 0 0 15px #00f, 0 0 30px #00f;
@@ -104,7 +91,6 @@
         box-shadow: 0 0 10px #fff, 0 0 25px #00f, 0 0 50px #00f;
       }
     }
-
     #starfield {
       position: fixed;
       top: 0;
@@ -114,9 +100,8 @@
       pointer-events: none;
       z-index: -1;
     }
-
     .btn {
-      margin-top: 20px;
+      margin: 10px;
       padding: 15px 30px;
       background-color: #00f;
       color: white;
@@ -127,11 +112,9 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-
     .btn:hover {
       background-color: #007bff;
     }
-
     .featured-games {
       margin-top: 30px;
       font-size: 36px;
@@ -140,135 +123,147 @@
       text-transform: uppercase;
       animation: neonGlowBlue 2s ease-in-out infinite alternate;
     }
-
     .game-images {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      align-items: center;
       margin-top: 20px;
-      width: 80%;
+      width: 90%;
+      gap: 15px;
     }
-
-    .game-images img {
-      width: 250px;
-      height: auto;
-      border-radius: 8px;
+    .game-images a {
+      flex: 1;
+      max-width: 350px;
       transition: transform 0.3s;
     }
-
-    .game-images img:hover {
+    .game-images img {
+      width: 100%;
+      height: 350px; /* Increased height */
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #00f;
+      box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    }
+    .game-images a:hover {
       transform: scale(1.05);
     }
-
     .footer {
       margin-top: 50px;
       padding: 20px;
-      background-color: #000;
+      background-color: rgba(0, 0, 0, 0.7);
       color: #ccc;
       font-size: 14px;
       text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
     }
   </style>
 </head>
 <body>
-
-<canvas id="starfield"></canvas>
-
-<div class="neon-text">Free Unblocked Games</div>
-
-<div class="search-container">
-  <input type="text" id="searchInput" placeholder="Search...">
-  <button onclick="searchElite()" class="mindfind">
-    <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 
-               6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 
-               4.23-1.57l.27.28v.79l5 4.99L20.49 
-               19l-4.99-5zm-6 0C7.01 14 5 11.99 5 
-               9.5S7.01 5 9.5 5 14 7.01 14 9.5 
-               11.99 14 9.5 14z"></path>
-    </svg>
-  </button>
-</div>
-
-<!-- Contact Us, Form, Discord buttons -->
-<button class="btn" onclick="window.open('jacksonplayzskibidiriss.github.io/contact_us', '_blank')">Contact Us</button>
-<button class="btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeb9XVfSdocm_9KNjwkXoBXVzD5O1Xb796vlZfE7_4wi7PnNw/viewform?embedded=true', '_blank')">Form</button>
-<button class="btn" onclick="window.open('https://discord.gg/xFMpuKBFr8', '_blank')">Join Our Discord</button>
-
-<!-- Featured Games Section -->
-<div class="featured-games">Featured Games</div>
-<div class="game-images">
-  <a href="https://jacksonplayzskibidiriss.github.io/1v1.lol" target="_blank">
-    <img src="https://gcdnb.pbrd.co/images/pedJf1uM7Oe3.jpg" alt="1v1 Lol">
-  </a>
-  </a>
-  <a href="https://jacksonplayzskibidiriss.github.io/boxingrandom" target="_blank">
-    <img src="https://gcdnb.pbrd.co/images/IzXAqJC0SJd4.png" alt="Game 3">
-  </a>
-</div>
-
-<!-- Footer Text -->
-<div class="footer">
-  <p><strong>Coincidence is God's way of remaining anonymous</strong></p>
-  <p>Please don't tell too much people about this, this might get blocked chat :(</p>
-  <p>This is a website where you can play unblocked games and have fun in school. If this gets blocked, I'm making another site chat, okay? Now go play those games! Games you can play are:</p>
-  <p>Mario Kart, Super Circuit, 1v1.lol, Boxing, Random Eaglercraft 1.12 and 1.8, Retro Bowl, and more!</p>
-</div>
-
-<script>
-  function searchElite() {
-    const query = document.getElementById('searchInput').value.trim();
-    if (query !== '') {
-      const url = 'https://sites.google.com/search/unblockedgamesforschools?query=' + encodeURIComponent(query);
-      window.open(url, '_blank');
-    }
-  }
-
-  document.getElementById('searchInput').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-      searchElite();
-    }
-  });
-
-  // Starfield animation
-  const canvas = document.getElementById('starfield');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  const stars = [];
-  const starCount = 100;
-
-  for (let i = 0; i < starCount; i++) {
-    stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 2 + 1,
-      speed: Math.random() * 0.5 + 0.1
-    });
-  }
-
-  function animateStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-    for (let star of stars) {
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-      ctx.fill();
-      star.y += star.speed;
-      if (star.y > canvas.height) {
-        star.y = 0;
-        star.x = Math.random() * canvas.width;
+  <canvas id="starfield"></canvas>
+  <div class="neon-text">Free Unblocked Games</div>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="searchElite()" class="mindfind">
+      <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Contact Us, Form, Discord buttons -->
+  <div class="button-container">
+    <button class="btn" onclick="window.open('jacksonplayzskibidiriss.github.io/contact_us', '_blank')">Contact Us</button>
+    <button class="btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeb9XVfSdocm_9KNjwkXoBXVzD5O1Xb796vlZfE7_4wi7PnNw/viewform?embedded=true', '_blank')">Form</button>
+    <button class="btn" onclick="window.open('https://discord.gg/xFMpuKBFr8', '_blank')">Join Our Discord</button>
+  </div>
+  
+  <!-- Featured Games Section -->
+  <div class="featured-games">Featured Games</div>
+  <div class="game-images">
+    <a href="https://jacksonplayzskibidiriss.github.io/1v1.lol" target="_blank">
+      <img src="https://gcdnb.pbrd.co/images/pedJf1uM7Oe3.jpg" alt="1v1 Lol">
+    </a>
+    <a href="https://jacksonplayzskibidiriss.github.io/drivemad" target="_blank">
+      <img src="https://drivemadgame.cc/uploads/games/main/img_68c3e328e0294.jpg" alt="Drive Mad">
+    </a>
+    <a href="https://jacksonplayzskibidiriss.github.io/boxingrandom" target="_blank">
+      <img src="https://gcdnb.pbrd.co/images/IzXAqJC0SJd4.png" alt="Boxing Random">
+    </a>
+  </div>
+  
+  <!-- Footer Text -->
+  <div class="footer">
+    <p><strong>Coincidence is God's way of remaining anonymous</strong></p>
+    <p>Please don't tell too much people about this, this might get blocked chat :(</p>
+    <p>This is a website where you can play unblocked games and have fun in school. If this gets blocked, I'm making another site chat, okay? Now go play those games! Games you can play are:</p>
+    <p>Mario Kart, Super Circuit, 1v1.lol, Boxing, Random Eaglercraft 1.12 and 1.8, Retro Bowl, and more!</p>
+  </div>
+  
+  <script>
+    function searchElite() {
+      const query = document.getElementById('searchInput').value.trim();
+      if (query !== '') {
+        const url = 'https://sites.google.com/search/unblockedgamesforschools?query=' + encodeURIComponent(query);
+        window.open(url, '_blank');
       }
     }
-    requestAnimationFrame(animateStars);
-  }
-
-  animateStars();
-
-  window.addEventListener('resize', () => {
+    
+    document.getElementById('searchInput').addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        searchElite();
+      }
+    });
+    
+    // Starfield animation
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-  });
-</script>
-
+    
+    const stars = [];
+    const starCount = 100;
+    
+    for (let i = 0; i < starCount; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 1,
+        speed: Math.random() * 0.5 + 0.1
+      });
+    }
+    
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      
+      for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fill();
+        
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      }
+      
+      requestAnimationFrame(animateStars);
+    }
+    
+    animateStars();
+    
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
 </html>
