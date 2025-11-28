@@ -1,306 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Free Unblocked Games</title>
-  <style>
-    body {
-      background: url('https://gcdnb.pbrd.co/images/ZkCX8Y8SExuR.jpg?o=1') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      font-family: 'Arial Black', sans-serif;
-      overflow-x: hidden;
-      text-align: center;
-      color: white;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    .neon-text {
-      font-size: 64px;
-      font-weight: bold;
-      text-transform: uppercase;
-      animation: neonGlowBlue 2s ease-in-out infinite alternate;
-      color: #00f;
-      margin-bottom: 20px;
-    }
-    .search-container {
-      display: flex;
-      align-items: center;
-      background: none;
-      border: 2px solid #00f;
-      padding: 10px 20px;
-      border-radius: 50px;
-      animation: neonGlowBlueInput 2s ease-in-out infinite alternate;
-      margin-bottom: 20px;
-    }
-    .search-container input {
-      background: transparent;
-      border: none;
-      outline: none;
-      color: #ffffff;
-      font-size: 20px;
-      width: 250px;
-      font-family: 'Arial Black', sans-serif;
-      caret-color: white;
-    }
-    .search-container input::placeholder {
-      color: #ccccff;
-    }
-    .mindfind {
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .mindfind svg {
-      width: 32px;
-      height: 32px;
-      stroke: white;
-      stroke-width: 2;
-      fill: none;
-    }
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
-      transition: background-color 5000s ease-in-out 0s;
-      -webkit-text-fill-color: white !important;
-      box-shadow: 0 0 0px 1000px transparent inset !important;
-    }
-    @keyframes neonGlowBlue {
-      from {
-        text-shadow: 0 0 5px #fff, 0 0 15px #00f, 0 0 30px #00f, 0 0 60px #00f;
-      }
-      to {
-        text-shadow: 0 0 10px #fff, 0 0 20px #00f, 0 0 40px #00f, 0 0 80px #00f;
-      }
-    }
-    @keyframes neonGlowBlueInput {
-      from {
-        box-shadow: 0 0 5px #fff, 0 0 15px #00f, 0 0 30px #00f;
-      }
-      to {
-        box-shadow: 0 0 10px #fff, 0 0 25px #00f, 0 0 50px #00f;
-      }
-    }
-    #starfield {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-    .btn {
-      margin: 10px;
-      padding: 15px 30px;
-      background-color: #00f;
-      color: white;
-      font-size: 18px;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .btn:hover {
-      background-color: #007bff;
-    }
-    .featured-games {
-      margin-top: 30px;
-      font-size: 36px;
-      font-weight: bold;
-      color: #00f;
-      text-transform: uppercase;
-      animation: neonGlowBlue 2s ease-in-out infinite alternate;
-    }
-    .game-images {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-      width: 90%;
-      gap: 15px;
-    }
-    .game-images a {
-      flex: 1;
-      max-width: 350px;
-      transition: transform 0.3s;
-    }
-    .game-images img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 2px solid #00f;
-      box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
-    }
-    .game-images a:hover {
-      transform: scale(1.05);
-    }
-    .footer {
-      margin-top: 50px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #ccc;
-      font-size: 14px;
-      text-align: center;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .button-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 20px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Unblocked Games</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial Black', sans-serif;
+            background: url('https://gcdnb.pbrd.co/images/ZkCX8Y8SExuR.jpg?o=1') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .neon-text {
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: neonGlowBlue 2s ease-in-out infinite alternate;
+            color: #00f;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        @keyframes neonGlowBlue {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 15px #00f, 0 0 30px #00f, 0 0 60px #00f;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #00f, 0 0 40px #00f, 0 0 80px #00f;
+            }
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: 2px solid #00f;
+            padding: 10px 20px;
+            border-radius: 50px;
+            animation: neonGlowBlueInput 2s ease-in-out infinite alternate;
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        @keyframes neonGlowBlueInput {
+            from {
+                box-shadow: 0 0 5px #fff, 0 0 15px #00f, 0 0 30px #00f;
+            }
+            to {
+                box-shadow: 0 0 10px #fff, 0 0 25px #00f, 0 0 50px #00f;
+            }
+        }
+
+        .search-container input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            font-size: 18px;
+            width: 100%;
+            font-family: 'Arial Black', sans-serif;
+            caret-color: white;
+        }
+
+        .search-container input::placeholder {
+            color: #ccccff;
+        }
+
+        .mindfind {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mindfind svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-text-fill-color: white !important;
+            box-shadow: 0 0 0px 1000px transparent inset !important;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 15px;
+        }
+
+        .btn {
+            margin: 5px;
+            padding: 12px 25px;
+            background-color: #00f;
+            color: white;
+            font-size: 16px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: #007bff;
+            transform: scale(1.05);
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: rgba(44, 44, 44, 0.8);
+            border-radius: 10px;
+            width: 220px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #00f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.7);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #00f;
+        }
+
+        .card h2 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .card button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+
+        .iframe-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .iframe-container iframe {
+            width: 90%;
+            height: 80%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 255, 0.5);
+        }
+
+        .iframe-container .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .iframe-container .close-button:hover {
+            background-color: #cc0000;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ccc;
+            font-size: 14px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .footer strong {
+            color: #00f;
+        }
+    </style>
 </head>
+
 <body>
-  <canvas id="starfield"></canvas>
-  <div class="neon-text">Free Unblocked Games</div>
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search games...">
-    <button onclick="searchElite()" class="mindfind">
-      <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-      </svg>
-    </button>
-  </div>
-  
-  <!-- Contact Us, Form, Discord buttons -->
-  <div class="button-container">
-    <button class="btn" onclick="window.open('https://freeunblockedgames2.github.io/contact_us', '_blank')">Contact Us</button>
-    <button class="btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeb9XVfSdocm_9KNjwkXoBXVzD5O1Xb796vlZfE7_4wi7PnNw/viewform?embedded=true', '_blank')">Form</button>
-    <button class="btn" onclick="window.open('https://discord.gg/xFMpuKBFr8', '_blank')">Join Our Discord</button>
-  </div>
-  
-  <!-- Featured Games Section -->
-  <div class="featured-games">Featured Games</div>
-  <div class="game-images">
-    <a href="https://freeunblockedgames2.github.io/1v1.lol" target="_blank">
-      <img src="https://gcdnb.pbrd.co/images/pedJf1uM7Oe3.jpg" alt="1v1 Lol">
-    </a>
-    <a href="https://freeunblockedgames2.github.io/drivemad" target="_blank">
-      <img src="https://drivemadgame.cc/uploads/games/main/img_68c3e328e0294.jpg" alt="Drive Mad">
-    </a>
-    <a href="https://freeunblockedgames2.github.io/boxingrandom" target="_blank">
-      <img src="https://gcdnb.pbrd.co/images/IzXAqJC0SJd4.png" alt="Boxing Random">
-    </a>
-  </div>
-  
-  <!-- Footer Text -->
-  <div class="footer">
-    <p><strong>Coincidence is God's way of remaining anonymous</strong></p>
-    <p>Please don't tell too much people about this, this might get blocked chat :(</p>
-    <p>This is a website where you can play unblocked games and have fun in school. If this gets blocked, I'm making another site chat, okay? Now go play those games! Games you can play are:</p>
-    <p>Mario Kart, Super Circuit, 1v1.lol, Boxing, Random Eaglercraft 1.12 and 1.8, Retro Bowl, and more!</p>
-  </div>
-  
-  <script>
-    function searchElite() {
-      const query = document.getElementById('searchInput').value.trim();
-      if (query !== '') {
-        // Game search database - maps keywords to game URLs
-        const gameDatabase = {
-          '1v1': 'https://freeunblockedgames2.github.io/1v1.lol',
-          'lol': 'https://freeunblockedgames2.github.io/1v1.lol',
-          'boxing': 'https://freeunblockedgames2.github.io/boxingrandom',
-          'fight': 'https://freeunblockedgames2.github.io/boxingrandom',
-          'drive mad': 'https://freeunblockedgames2.github.io/drivemad',
-          'drive': 'https://freeunblockedgames2.github.io/drivemad',
-          'mad': 'https://freeunblockedgames2.github.io/drivemad',
-          'mario': 'https://freeunblockedgames2.github.io/mario',
-          'kart': 'https://freeunblockedgames2.github.io/mario',
-          'retro bowl': 'https://freeunblockedgames2.github.io/retrobowl',
-          'football': 'https://freeunblockedgames2.github.io/retrobowl',
-          'eaglercraft': 'https://freeunblockedgames2.github.io/eaglercraft',
-          'minecraft': 'https://freeunblockedgames2.github.io/eaglercraft',
-          'craft': 'https://freeunblockedgames2.github.io/eaglercraft'
-        };
+    <canvas id="starfield"></canvas>
+    
+    <header>
+        <div class="neon-text">Free Unblocked Games</div>
         
-        const lowerQuery = query.toLowerCase();
-        let foundGame = null;
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search games...">
+            <button onclick="searchGames()" class="mindfind">
+                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+            </button>
+        </div>
         
-        // Check if query matches any game keywords
-        for (const [keyword, gameUrl] of Object.entries(gameDatabase)) {
-          if (lowerQuery.includes(keyword)) {
-            foundGame = gameUrl;
-            break;
-          }
+        <div class="button-container">
+            <button class="btn" onclick="openContactUs()">Contact Us</button>
+            <button class="btn" onclick="openChatRoom()">Chat Room</button>
+            <button class="btn" onclick="openForm()">Form</button>
+            <button class="btn" onclick="window.open('https://discord.gg/xFMpuKBFr8', '_blank')">Join Our Discord</button>
+        </div>
+    </header>
+    
+    <div class="card-container" id="cardContainer">
+        <div class="card" data-title="PolyTrack">
+            <img src="https://www.kizgame.com/thumbs/polytrack_small.webp" alt="PolyTrack">
+            <h2>PolyTrack</h2>
+            <button onclick="playGame('https://freeunblockedgames2.github.io/polytrack')">Play</button>
+        </div>
+        <div class="card" data-title="EaglerCraft">
+            <img src="https://avatars.githubusercontent.com/u/136807160?s=200&v=4" alt="EaglerCraft">
+            <h2>EaglerCraft</h2>
+            <button onclick="playGame('https://freeunblockedgames2.github.io/minecraft')">Play</button>
+        </div>
+        <div class="card" data-title="1v1 LOL">
+            <img src="https://img.utdstc.com/icon/983/22a/98322a3b2be892eed31589906ffd949b68bcccc9a21ba562987965b5ec6bc6de:200" alt="1v1 LOL">
+            <h2>1v1 LOL</h2>
+            <button onclick="playGame('https://freeunblockedgames2.github.io/1v1lol')">Play</button>
+        </div>
+        <div class="card" data-title="Drive Mad">
+            <img src="https://drivemadgame.cc/uploads/games/main/img_68c3e328e0294.jpg" alt="Drive Mad">
+            <h2>Drive Mad</h2>
+            <button onclick="playGame('https://freeunblockedgames2.github.io/drivemad')">Play</button>
+        </div>
+        <div class="card" data-title="Boxing Random">
+            <img src="https://play-lh.googleusercontent.com/ZuMoNX6xiIBRwdtSL-FN0xCdXyahk8SRaPZ5_4HzkdQEp2Tm_GAsha9OcsRoSDgSw8Y" alt="Boxing Random">
+            <h2>Boxing Random</h2>
+            <button onclick="playGame('https://freeunblockedgames2.github.io/boxingrandom')">Play</button>
+        </div>
+        <div class="card" data-title="Slope">
+            <img src="https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs" alt="Slope">
+            <h2>Slope</h2>
+            <button onclick="playGame('https://freeunblockedgames2.github.io/slope')">Play</button>
+        </div>
+        <div class="card" data-title="Adventure Drivers">
+            <img src="https://store-images.s-microsoft.com/image/apps.42304.13646312602223146.fc3d6529-2147-49fc-bfda-1963fcd8fa65.7c7789ad-4b93-43aa-877f-fbc7b5271181" alt="Adventure Drivers">
+            <h2>Adventure Drivers</h2>
+            <button onclick="playGame('https://freeunblockedgames2.github.io/adventuredrivers')">Play</button>
+        </div>
+        <div class="card" data-title="Flappy Bird">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Flappy_Bird_icon.png/250px-Flappy_Bird_icon.png" alt="Flappy Bird">
+            <h2>Flappy Bird</h2>
+            <button onclick="playGame('https://freeunblockedgames2.github.io/flappybird')">Play</button>
+        </div>
+        <div class="card" data-title="Drift Boss">
+            <img src="https://cdn.now.gg/apps-content/com.nowgg.h5.pub474.app50005/icon/drift-boss.png" alt="Drift Boss">
+            <h2>Drift Boss</h2>
+            <button onclick="playGame('https://freeunblockedgames2.github.io/driftboss')">Play</button>
+        </div>
+        <div class="card" data-title="Coreball">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITXq6rKQeKZHso_AvjIEKE2YT02fY-cCELA&s" alt="Coreball">
+            <h2>Coreball</h2>
+            <button onclick="playGame('https://freeunblockedgames2.github.io/coreball')">Play</button>
+        </div>
+    </div>
+
+    <div class="iframe-container" id="iframeContainer">
+        <button class="close-button" onclick="closeGame()">Close</button>
+        <iframe id="gameIframe" src=""></iframe>
+    </div>
+
+    <div class="footer">
+        <p><strong>Coincidence is God's way of remaining anonymous</strong></p>
+        <p>Please don't tell too many people about this, this might get blocked :(</p>
+        <p>This is a website where you can play unblocked games and have fun in school. If this gets blocked, I'm making another site, okay? Now go play those games! Games you can play are:</p>
+        <p>Mario Kart, Super Circuit, 1v1.lol, Boxing, Random Eaglercraft 1.12 and 1.8, Retro Bowl, and more!</p>
+    </div>
+
+    <script>
+        // Search functionality
+        document.getElementById('searchBar').addEventListener('input', function () {
+            const searchQuery = this.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                if (title.includes(searchQuery)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Search button functionality
+        function searchGames() {
+            const searchQuery = document.getElementById('searchBar').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            let found = false;
+            
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                if (title.includes(searchQuery)) {
+                    card.style.display = 'block';
+                    found = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            if (!found) {
+                alert('No games found matching your search. Try a different keyword.');
+                // Show all cards if no match found
+                cards.forEach(card => {
+                    card.style.display = 'block';
+                });
+            }
+        }
+
+        // Enter key support for search
+        document.getElementById('searchBar').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                searchGames();
+            }
+        });
+
+        // Game play functionality
+        function playGame(url) {
+            document.getElementById('gameIframe').src = url;
+            document.getElementById('iframeContainer').style.display = 'flex';
+        }
+
+        function closeGame() {
+            document.getElementById('gameIframe').src = '';
+            document.getElementById('iframeContainer').style.display = 'none';
+        }
+
+        // Contact Us functionality
+        function openContactUs() {
+            document.getElementById('gameIframe').src = 'https://freeunblockedgames2.github.io/contactus';
+            document.getElementById('iframeContainer').style.display = 'flex';
+        }
+
+        // Chat Room functionality
+        function openChatRoom() {
+            document.getElementById('gameIframe').src = 'https://freeunblockedgames2.github.io/chatroom';
+            document.getElementById('iframeContainer').style.display = 'flex';
+        }
+
+        // Form functionality
+        function openForm() {
+            document.getElementById('gameIframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSeb9XVfSdocm_9KNjwkXoBXVzD5O1Xb796vlZfE7_4wi7PnNw/viewform?embedded=true';
+            document.getElementById('iframeContainer').style.display = 'flex';
+        }
+
+        // Starfield animation
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const stars = [];
+        const starCount = 100;
+        
+        for (let i = 0; i < starCount; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 2 + 1,
+                speed: Math.random() * 0.5 + 0.1
+            });
         }
         
-        if (foundGame) {
-          // Redirect to the specific game
-          window.open(foundGame, '_blank');
-        } else {
-          // If no match found, redirect to main page
-          window.open('https://freeunblockedgames2.github.io/', '_blank');
+        function animateStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            
+            for (let star of stars) {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                star.y += star.speed;
+                if (star.y > canvas.height) {
+                    star.y = 0;
+                    star.x = Math.random() * canvas.width;
+                }
+            }
+            
+            requestAnimationFrame(animateStars);
         }
         
-        // Clear search input
-        document.getElementById('searchInput').value = '';
-      }
-    }
-    
-    document.getElementById('searchInput').addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') {
-        searchElite();
-      }
-    });
-    
-    // Starfield animation
-    const canvas = document.getElementById('starfield');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
-    const stars = [];
-    const starCount = 100;
-    
-    for (let i = 0; i < starCount; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 1,
-        speed: Math.random() * 0.5 + 0.1
-      });
-    }
-    
-    function animateStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-      
-      for (let star of stars) {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fill();
+        animateStars();
         
-        star.y += star.speed;
-        if (star.y > canvas.height) {
-          star.y = 0;
-          star.x = Math.random() * canvas.width;
-        }
-      }
-      
-      requestAnimationFrame(animateStars);
-    }
-    
-    animateStars();
-    
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
