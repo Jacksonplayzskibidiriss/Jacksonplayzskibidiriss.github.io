@@ -240,6 +240,7 @@
             cursor: pointer;
             font-family: 'Arial Black', sans-serif;
             z-index: 1001;
+            transition: opacity 0.3s ease;
         }
 
         .iframe-container .close-button:hover {
@@ -260,6 +261,7 @@
             font-family: 'Arial Black', sans-serif;
             animation: neonGlowBlueButton 2s ease-in-out infinite alternate;
             z-index: 1001;
+            transition: opacity 0.3s ease;
         }
 
         @keyframes neonGlowBlueButton {
@@ -273,6 +275,13 @@
 
         .iframe-container .fullscreen-button:hover {
             background-color: #007bff;
+        }
+
+        /* Hide buttons when in fullscreen */
+        .iframe-container.fullscreen .close-button,
+        .iframe-container.fullscreen .fullscreen-button {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .footer {
@@ -438,6 +447,8 @@
             document.getElementById('iframeContainer').style.display = 'flex';
             // Reset fullscreen state when opening new game
             document.getElementById('iframeContainer').classList.remove('fullscreen');
+            // Reset button text
+            document.querySelector('.fullscreen-button').textContent = 'Fullscreen';
         }
 
         function closeGame() {
@@ -445,6 +456,8 @@
             document.getElementById('iframeContainer').style.display = 'none';
             // Reset fullscreen state when closing game
             document.getElementById('iframeContainer').classList.remove('fullscreen');
+            // Reset button text
+            document.querySelector('.fullscreen-button').textContent = 'Fullscreen';
         }
 
         // Game fullscreen functionality
@@ -466,6 +479,8 @@
             document.getElementById('iframeContainer').style.display = 'flex';
             // Reset fullscreen state when opening contact us
             document.getElementById('iframeContainer').classList.remove('fullscreen');
+            // Reset button text
+            document.querySelector('.fullscreen-button').textContent = 'Fullscreen';
         }
 
         // Chat Room functionality
@@ -474,6 +489,8 @@
             document.getElementById('iframeContainer').style.display = 'flex';
             // Reset fullscreen state when opening chat room
             document.getElementById('iframeContainer').classList.remove('fullscreen');
+            // Reset button text
+            document.querySelector('.fullscreen-button').textContent = 'Fullscreen';
         }
 
         // Form functionality
@@ -482,6 +499,8 @@
             document.getElementById('iframeContainer').style.display = 'flex';
             // Reset fullscreen state when opening form
             document.getElementById('iframeContainer').classList.remove('fullscreen');
+            // Reset button text
+            document.querySelector('.fullscreen-button').textContent = 'Fullscreen';
         }
 
         // Starfield animation
